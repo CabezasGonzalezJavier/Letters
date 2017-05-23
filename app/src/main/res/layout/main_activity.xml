@@ -16,23 +16,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_toLeftOf="@+id/main_activity_button"
-        android:hint="@string/type_in" />
+        android:hint="@string/main_activity_type_in" />
 
     <Button
         android:id="@+id/main_activity_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentRight="true"
+        android:text="@string/main_activity_check" />
 
     <android.support.percent.PercentRelativeLayout
         android:id="@+id/main_activity_percent_relative_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/main_activity_button">
 
         <TextView
             android:id="@+id/main_activity_first_text"
             android:background="@drawable/rectangle"
+            android:gravity="center"
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/main_activity_size_trail"
             app:layout_heightPercent="15%"
             app:layout_marginLeftPercent="2%"
             app:layout_marginTopPercent="2%"
@@ -42,6 +46,9 @@
             android:id="@+id/main_activity_second_text"
             android:layout_toRightOf="@+id/main_activity_first_text"
             android:background="@drawable/rectangle"
+            android:gravity="center"
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/main_activity_size_trail"
             app:layout_heightPercent="15%"
             app:layout_marginLeftPercent="1%"
             app:layout_marginTopPercent="2%"
@@ -51,6 +58,9 @@
             android:id="@+id/main_activity_third_text"
             android:layout_toRightOf="@+id/main_activity_second_text"
             android:background="@drawable/rectangle"
+            android:gravity="center"
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/main_activity_size_trail"
             app:layout_heightPercent="15%"
             app:layout_marginLeftPercent="1%"
             app:layout_marginTopPercent="2%"
@@ -60,6 +70,9 @@
             android:id="@+id/main_activity_fourth_text"
             android:layout_toRightOf="@+id/main_activity_third_text"
             android:background="@drawable/rectangle"
+            android:gravity="center"
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/main_activity_size_trail"
             app:layout_heightPercent="15%"
             app:layout_marginLeftPercent="1%"
             app:layout_marginTopPercent="2%"
@@ -69,6 +82,9 @@
             android:id="@+id/main_activity_fifth_text"
             android:layout_toRightOf="@+id/main_activity_fourth_text"
             android:background="@drawable/rectangle"
+            android:gravity="center"
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/main_activity_size_trail"
             app:layout_heightPercent="15%"
             app:layout_marginLeftPercent="1%"
             app:layout_marginTopPercent="2%"
@@ -78,6 +94,9 @@
             android:id="@+id/main_activity_sixth_text"
             android:layout_toRightOf="@+id/main_activity_fifth_text"
             android:background="@drawable/rectangle"
+            android:gravity="center"
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/main_activity_size_trail"
             app:layout_heightPercent="15%"
             app:layout_marginLeftPercent="1%"
             app:layout_marginRightPercent="2%"
@@ -90,6 +109,9 @@
         android:id="@+id/main_activity_main_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/main_activity_percent_relative_layout" />
+        android:layout_below="@+id/main_activity_percent_relative_layout"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:gravity="center"
+        android:textSize="@dimen/main_activity_size_trail" />
 
 </RelativeLayout>

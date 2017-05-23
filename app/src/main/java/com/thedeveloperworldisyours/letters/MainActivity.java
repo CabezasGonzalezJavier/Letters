@@ -18,6 +18,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 import static com.thedeveloperworldisyours.letters.Utils.getRandom;
 import static com.thedeveloperworldisyours.letters.Utils.getStringWith6Character;
@@ -56,18 +57,19 @@ public class MainActivity extends AppCompatActivity {
 
     List<String> mPutMessy;
     String[] mLetterInButton;
-    Snackbar mSnackbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
         ButterKnife.bind(this);
+        mLetterInButton = new String[6];
     }
 
+    @OnClick(R.id.main_activity_button)
     public void checkbutton() {
         if (mEditText.getText().toString().isEmpty()) {
-            customSnackBar(R.string.empty, ContextCompat.getColor(this, R.color.colorAccent));
+            customSnackBar(R.string.main_activity_empty, ContextCompat.getColor(this, R.color.colorAccent));
         } else {
             putResponseInButtonAndTrail();
         }
@@ -85,11 +87,10 @@ public class MainActivity extends AppCompatActivity {
         StringBuilder stringBuilder = new StringBuilder(response);
 
         int init = getRandom(response.length());
-//        Log.d(" init --> ", String.valueOf(init));
 
         stringBuilder = putLettersInButton(stringBuilder, init, response);
 
-        Collections.shuffle(mPutMessy);
+//        Collections.shuffle(mPutMessy);
         putResponseInButtons();
         mMail.setText(stringBuilder);
     }
@@ -148,10 +149,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void customSnackBar(int text, int color) {
-        Snackbar mSnackbar = Snackbar.make(mRelativeLayout, getString(text), Snackbar.LENGTH_LONG);
+        Snackbar snackbar = Snackbar.make(mRelativeLayout, getString(text), Snackbar.LENGTH_LONG);
 
         // get snackbar view
-        View mView = mSnackbar.getView();
+        View mView = snackbar.getView();
         mView.setBackgroundResource(color);
 
         // get textview inside snackbar view
@@ -171,6 +172,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // show the snackbar
-        mSnackbar.show();
+        snackbar.show();
     }
 }

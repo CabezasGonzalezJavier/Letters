@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Letters</string>
-    <string name="type_in">Enter text</string>
-    <string name="type_in_box">Enter text in the box</string>
-    <string name="empty">Empty field, enter text, please.</string>
+    <string name="main_activity_type_in">Enter text</string>
+    <string name="main_activity_type_in_box">Enter text in the box</string>
+    <string name="main_activity_empty">Empty field, enter text, please.</string>
+    <string name="main_activity_check">Check</string>
 </resources>
