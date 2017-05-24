@@ -27,17 +27,17 @@ public class MainActivityEspressoTest {
 
     @Test
     public void checkText() {
-        onView(withId(R.id.main_activity_edit_text)).perform(typeText("Engine"));
-        onView(withId(R.id.main_activity_button)).perform(click());
+        onView(withId(R.id.main_fragment_edit_text)).perform(typeText("Engine"));
+        onView(withId(R.id.main_fragment_button)).perform(click());
 
-        onView(withId(R.id.main_activity_first_text)).check(matches(withText("E")));
-        onView(withId(R.id.main_activity_second_text)).check(matches(withText("n")));
-        onView(withId(R.id.main_activity_third_text)).check(matches(withText("g")));
+        onView(withId(R.id.main_fragment_first_text)).check(matches(withText("E")));
+        onView(withId(R.id.main_fragment_second_text)).check(matches(withText("n")));
+        onView(withId(R.id.main_fragment_third_text)).check(matches(withText("g")));
 
-        onView(withId(R.id.main_activity_fourth_text)).check(matches(withText("i")));
-        onView(withId(R.id.main_activity_fifth_text)).check(matches(withText("n")));
-        onView(withId(R.id.main_activity_sixth_text)).check(matches(withText("e")));
+        onView(withId(R.id.main_fragment_fourth_text)).check(matches(withText("i")));
+        onView(withId(R.id.main_fragment_fifth_text)).check(matches(withText("n")));
+        onView(withId(R.id.main_fragment_sixth_text)).check(matches(withText("e")));
 
-        onView(withId(R.id.main_activity_main_text)).check(matches(withText("______")));
+        onView(withId(R.id.main_fragment_main_text)).check(matches(withText("______")));
     }
 }

@@ -64,7 +64,7 @@ android {
 
     // Remove mockRelease as it's not needed.
     android.variantFilter { variant ->
-        if(variant.buildType.name.equals('release')
+        if (variant.buildType.name.equals('release')
                 && variant.getFlavors().get(0).name.equals('mock')) {
             variant.setIgnore(true);
         }
@@ -86,41 +86,21 @@ dependencies {
     compile "com.android.support:percent:$rootProject.buildToolsVersion"
     compile "com.android.support:design:$rootProject.buildToolsVersion"
     compile "com.android.support:appcompat-v7:$rootProject.buildToolsVersion"
+    compile "com.android.support:support-annotations:$rootProject.buildToolsVersion"
     androidTestCompile "com.android.support:support-annotations:$rootProject.buildToolsVersion"
-    testCompile 'junit:junit:4.12'
+    compile "com.google.guava:guava:$rootProject.guavaVersion"
+
+    // Dependencies for local unit tests
+    testCompile "junit:junit:$rootProject.junitVersion"
+    testCompile "org.mockito:mockito-all:$rootProject.mockitoVersion"
+    testCompile "org.hamcrest:hamcrest-all:$rootProject.hamcrestVersion"
 
     // Butter knife
     compile "com.jakewharton:butterknife:$rootProject.butterknife"
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknife"
 
     // Espresso UI Testing
-    // App's dependencies, including test
-    compile "com.android.support:support-annotations:$rootProject.buildToolsVersion"
-
-    // Testing-only dependencies
+    compile 'com.android.support:support-v4:25.3.1'
     androidTestCompile 'com.android.support.test:runner:0.5'
     androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
-//    androidTestCompile "com.android.support.test.espresso:espresso-core:$rootProject.espressoVersion"
-//    androidTestCompile "com.android.support.test.espresso:espresso-contrib:$rootProject.espressoVersion"
-//    androidTestCompile "com.android.support.test.espresso:espresso-intents:$rootProject.espressoVersion"
-//
-//    androidTestCompile "com.android.support.test.espresso:espresso-core:$rootProject.espressoVersion"
-//    androidTestCompile 'com.android.support.test:runner:0.5'
-//    androidTestCompile "com.android.support.test.espresso:espresso-intents:$rootProject.espressoVersion"
-//    /**
-//     * AccessibilityChecks
-//     * CountingIdlingResource
-//     * DrawerActions
-//     * DrawerMatchers
-//     * PickerActions (Time and Date picker)
-//     * RecyclerViewActions
-//     */
-//    androidTestCompile("com.android.support.test.espresso:espresso-contrib:$rootProject.espressoVersion") {
-//        exclude group: 'com.android.support', module: 'appcompat'
-//        exclude group: 'com.android.support', module: 'support-v4'
-//        exclude group: 'com.android.support', module: 'support-v7'
-//        exclude group: 'com.android.support', module: 'design'
-//        exclude module: 'support-annotations'
-//        exclude module: 'recyclerview-v7'
-//    }
 }
