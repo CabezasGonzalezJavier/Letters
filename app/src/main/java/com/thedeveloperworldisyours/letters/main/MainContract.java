@@ -1,4 +1,7 @@
-package com.thedeveloperworldisyours.letters;
+package com.thedeveloperworldisyours.letters.main;
+
+import com.thedeveloperworldisyours.letters.BasePresenter;
+import com.thedeveloperworldisyours.letters.BaseView;
 
 import java.util.List;
 
@@ -8,7 +11,7 @@ import java.util.List;
 
 public class MainContract {
 
-    interface Presenter extends BasePresenter {
+    public interface Presenter extends BasePresenter {
         void putResponseInButtonAndTrail(String response);
         void putResponseInButtonAndTrailFromServer(String response);
         StringBuilder putLettersInButton(StringBuilder stringBuilder, int init, String
@@ -17,7 +20,7 @@ public class MainContract {
                 response);
     }
 
-    interface View extends BaseView<Presenter> {
+    public interface View extends BaseView<Presenter> {
 
         void putResponseInButtons(List<String> putMessy);
         void setTraining(String training);

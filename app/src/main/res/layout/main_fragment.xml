@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.thedeveloperworldisyours.letters.MainFragment">
+    tools:context="com.thedeveloperworldisyours.letters.main.MainFragment">
 
     <EditText
         android:id="@+id/main_fragment_edit_text"

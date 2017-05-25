@@ -1,4 +1,4 @@
-package com.thedeveloperworldisyours.letters;
+package com.thedeveloperworldisyours.letters.main;
 
 import android.graphics.Typeface;
 import android.os.Build;
@@ -14,6 +14,8 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.thedeveloperworldisyours.letters.R;
 
 import java.util.List;
 

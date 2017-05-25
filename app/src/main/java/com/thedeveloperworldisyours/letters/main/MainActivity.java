@@ -1,8 +1,11 @@
-package com.thedeveloperworldisyours.letters;
+package com.thedeveloperworldisyours.letters.main;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+
+import com.thedeveloperworldisyours.letters.ActivityUtils;
+import com.thedeveloperworldisyours.letters.R;
 
 public class MainActivity extends AppCompatActivity {
 

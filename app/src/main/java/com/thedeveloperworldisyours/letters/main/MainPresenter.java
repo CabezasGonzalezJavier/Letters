@@ -1,4 +1,4 @@
-package com.thedeveloperworldisyours.letters;
+package com.thedeveloperworldisyours.letters.main;
 
 import java.util.ArrayList;
 import java.util.List;

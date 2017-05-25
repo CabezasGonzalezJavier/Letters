@@ -1,5 +1,9 @@
 package com.thedeveloperworldisyours.letters;
 
+
+import com.thedeveloperworldisyours.letters.main.MainContract;
+import com.thedeveloperworldisyours.letters.main.MainPresenter;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -26,19 +30,21 @@ public class MainPresenterTest {
     String mResponse;
     StringBuilder mStringBuilder;
     List<String> mList;
+    int mInit;
 
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
+        mStringBuilder = new StringBuilder("");
+        mPresenter = new MainPresenter(mView);
+        mList = new ArrayList<>();
+        mInit = 0;
     }
 
     @Test
     public void putLettersInButtonTest() {
 
         mResponse = "Engine";
-        mStringBuilder = new StringBuilder("");
-        mPresenter = new MainPresenter(mView);
-        mList = new ArrayList<>();
         mList.add("E");
         mList.add("n");
         mList.add("g");
@@ -56,9 +62,6 @@ public class MainPresenterTest {
     @Test
     public void putLettersInButtonWithAccent() {
         mResponse = "tambié";
-        mStringBuilder = new StringBuilder("");
-        mPresenter = new MainPresenter(mView);
-        mList = new ArrayList<>();
         mList.add("t");
         mList.add("a");
         mList.add("m");
@@ -70,6 +73,22 @@ public class MainPresenterTest {
         mPresenter.putResponseInButtonAndTrail(mResponse);
 
         verify(mView).setTraining("______");
+        verify(mView).putResponseInButtons(mList);
+    }
+
+    @Test
+    public void putLettersInButton() {
+        mResponse = "también";
+        mInit = 1;
+        StringBuilder stringBuilder = new StringBuilder(mResponse);
+        mPresenter.putLettersInButton(stringBuilder, mInit, mResponse);
+
+        mList.add("a");
+        mList.add("m");
+        mList.add("b");
+        mList.add("i");
+        mList.add("é");
+        mList.add("n");
         verify(mView).putResponseInButtons(mList);
     }
 }
