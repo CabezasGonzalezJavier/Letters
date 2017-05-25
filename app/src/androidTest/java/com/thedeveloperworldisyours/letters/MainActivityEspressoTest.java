@@ -1,5 +1,6 @@
 package com.thedeveloperworldisyours.letters;
 
+import android.os.SystemClock;
 import android.support.test.filters.LargeTest;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
@@ -39,6 +40,20 @@ public class MainActivityEspressoTest {
         onView(withId(R.id.main_fragment_fourth_text)).check(matches(withText("i")));
         onView(withId(R.id.main_fragment_fifth_text)).check(matches(withText("n")));
         onView(withId(R.id.main_fragment_sixth_text)).check(matches(withText("e")));
+
+        onView(withId(R.id.main_fragment_main_text)).check(matches(withText("______")));
+    }
+
+    @Test
+    public void checkFromServer() {
+        onView(withId(R.id.main_fragment_server_button)).perform(click());
+        onView(withId(R.id.main_fragment_first_text)).check(matches(withText("0")));
+        onView(withId(R.id.main_fragment_second_text)).check(matches(withText("1")));
+        onView(withId(R.id.main_fragment_third_text)).check(matches(withText("2")));
+
+        onView(withId(R.id.main_fragment_fourth_text)).check(matches(withText("3")));
+        onView(withId(R.id.main_fragment_fifth_text)).check(matches(withText("4")));
+        onView(withId(R.id.main_fragment_sixth_text)).check(matches(withText("ú")));
 
         onView(withId(R.id.main_fragment_main_text)).check(matches(withText("______")));
     }

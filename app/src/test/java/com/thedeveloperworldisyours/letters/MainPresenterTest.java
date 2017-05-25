@@ -91,4 +91,21 @@ public class MainPresenterTest {
         mList.add("n");
         verify(mView).putResponseInButtons(mList);
     }
+
+    @Test
+    public void putLettersInButtonInit() {
+        mResponse = "Caramelo";
+        mInit = 2;
+        StringBuilder stringBuilder = new StringBuilder(mResponse);
+        mPresenter.putLettersInButton(stringBuilder, mInit, mResponse);
+
+        mList.add("r");
+        mList.add("a");
+        mList.add("m");
+        mList.add("e");
+        mList.add("l");
+        mList.add("o");
+        verify(mView).putResponseInButtons(mList);
+    }
+
 }

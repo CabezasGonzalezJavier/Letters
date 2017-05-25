@@ -85,7 +85,8 @@ public class MainFragment extends Fragment implements MainContract.View {
 
     @OnClick(R.id.main_fragment_server_button)
     public void checkFromServerButton() {
-        String response = "caramelo";
+//        String response = "caramelo";
+        String response = "01234u\u0301";
 
         if (response.isEmpty()) {
             customSnackBar(R.string.main_activity_empty, ContextCompat.getColor(getActivity(), R.color.colorAccent));
