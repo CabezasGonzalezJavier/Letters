@@ -10,7 +10,10 @@ public class MainContract {
 
     interface Presenter extends BasePresenter {
         void putResponseInButtonAndTrail(String response);
+        void putResponseInButtonAndTrailFromServer(String response);
         StringBuilder putLettersInButton(StringBuilder stringBuilder, int init, String
+                response);
+        StringBuilder putLettersInButtonFromServer(StringBuilder stringBuilder, int init, String
                 response);
     }
 

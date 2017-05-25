@@ -4,7 +4,6 @@
     <string name="main_activity_type_in_box">Enter text in the box</string>
     <string name="main_activity_empty">Empty field, enter text, please.</string>
     <string name="main_activity_check">Check</string>
+    <string name="main_activity_check_from_server">Check from server</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

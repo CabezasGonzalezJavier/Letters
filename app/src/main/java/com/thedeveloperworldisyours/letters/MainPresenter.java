@@ -38,12 +38,43 @@ public class MainPresenter implements MainContract.Presenter {
     }
 
     @Override
+    public void putResponseInButtonAndTrailFromServer(String response) {
+        //put space in when is less than 6
+        getStringWith6Character(response);
+
+        StringBuilder stringBuilder = new StringBuilder(response);
+
+        int init = getRandom(response.length());
+
+        stringBuilder = putLettersInButton(stringBuilder, init, response);
+
+//        Collections.shuffle(mPutMessy);
+        mView.setTraining(stringBuilder.toString());
+    }
+
+    @Override
     public StringBuilder putLettersInButton(StringBuilder stringBuilder, int init, String
             response) {
         List<String> putMessy = new ArrayList<>();
         String[] letterInButton = new String[6];
         for (int i = 0; 6 > i; i++) {
+            letterInButton[i] = response.substring(init, init + 1);
+            putMessy.add(letterInButton[i]);
 
+            if (init < response.length()) {
+                stringBuilder.setCharAt(init, '_');
+            }
+            init++;
+        }
+        mView.putResponseInButtons(putMessy);
+        return stringBuilder;
+    }
+
+    @Override
+    public StringBuilder putLettersInButtonFromServer(StringBuilder stringBuilder, int init, String response) {
+        List<String> putMessy = new ArrayList<>();
+        String[] letterInButton = new String[6];
+        for (int i = 0; 6 > i; i++) {
             if ((i == 0) && (hasAccentFirstPosition(response.substring(init, init + 1)))) {
                 // when the first position is a accent
                 letterInButton[i] = response.substring(init - 1, init + 1);

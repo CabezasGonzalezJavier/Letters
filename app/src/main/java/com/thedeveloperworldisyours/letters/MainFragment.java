@@ -81,6 +81,17 @@ public class MainFragment extends Fragment implements MainContract.View {
         return view;
     }
 
+    @OnClick(R.id.main_fragment_server_button)
+    public void checkFromServerButton() {
+        String response = "caramelo";
+
+        if (response.isEmpty()) {
+            customSnackBar(R.string.main_activity_empty, ContextCompat.getColor(getActivity(), R.color.colorAccent));
+        } else {
+            mPresenter.putResponseInButtonAndTrailFromServer(response);
+        }
+    }
+
     @OnClick(R.id.main_fragment_button)
     public void checkButton() {
         String response = mEditText.getText().toString();

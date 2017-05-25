@@ -52,4 +52,24 @@ public class MainPresenterTest {
         verify(mView).setTraining("______");
         verify(mView).putResponseInButtons(mList);
     }
+
+    @Test
+    public void putLettersInButtonWithAccent() {
+        mResponse = "tambié";
+        mStringBuilder = new StringBuilder("");
+        mPresenter = new MainPresenter(mView);
+        mList = new ArrayList<>();
+        mList.add("t");
+        mList.add("a");
+        mList.add("m");
+        mList.add("b");
+        mList.add("i");
+        mList.add("é");
+
+
+        mPresenter.putResponseInButtonAndTrail(mResponse);
+
+        verify(mView).setTraining("______");
+        verify(mView).putResponseInButtons(mList);
+    }
 }
