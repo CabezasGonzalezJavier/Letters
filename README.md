@@ -1,6 +1,4 @@
 # Letters
-letters
-
 
 This app inclid:
 
