@@ -1,5 +1,6 @@
 package com.thedeveloperworldisyours.letters.main;
 
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         // Set up the toolbar.
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.colorText));
         toolbar.setTitle(R.string.app_name);
 
 
