@@ -30,6 +30,7 @@ public class MainActivityEspressoTest {
 
     @Test
     public void checkText() {
+
         onView(withId(R.id.main_fragment_edit_text)).perform(typeText("Engine"));
         onView(withId(R.id.main_fragment_button)).perform(click());
 
@@ -46,6 +47,7 @@ public class MainActivityEspressoTest {
 
     @Test
     public void checkFromServer() {
+
         onView(withId(R.id.main_fragment_server_button)).perform(click());
         onView(withId(R.id.main_fragment_first_text)).check(matches(withText("0")));
         onView(withId(R.id.main_fragment_second_text)).check(matches(withText("1")));
