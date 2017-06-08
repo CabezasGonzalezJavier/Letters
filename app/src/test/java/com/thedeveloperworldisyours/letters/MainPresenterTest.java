@@ -108,4 +108,20 @@ public class MainPresenterTest {
         verify(mView).putResponseInButtons(mList);
     }
 
+    @Test
+    public void putLettersInButtonFromServer() {
+        mResponse = "01234e\u0301";
+        mInit = 0;
+        StringBuilder stringBuilder = new StringBuilder(mResponse);
+        mPresenter.putLettersInButtonFromServer(stringBuilder, mInit, mResponse);
+
+        mList.add("0");
+        mList.add("1");
+        mList.add("2");
+        mList.add("3");
+        mList.add("4");
+        mList.add("é");
+        verify(mView).putResponseInButtons(mList);
+    }
+
 }
