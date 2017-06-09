@@ -109,7 +109,7 @@ public class MainPresenterTest {
     }
 
     @Test
-    public void putLettersInButtonFromServer() {
+    public void putLettersInButtonFromServerAccentInLastPosition() {
         mResponse = "01234e\u0301";
         mInit = 0;
         StringBuilder stringBuilder = new StringBuilder(mResponse);
@@ -121,6 +121,22 @@ public class MainPresenterTest {
         mList.add("3");
         mList.add("4");
         mList.add("é");
+        verify(mView).putResponseInButtons(mList);
+    }
+
+    @Test
+    public void putLettersInButtonFromServerAccentInFirstPosition() {
+        mResponse = "é01234";
+        mInit = 0;
+        StringBuilder stringBuilder = new StringBuilder(mResponse);
+        mPresenter.putLettersInButtonFromServer(stringBuilder, mInit, mResponse);
+
+        mList.add("é");
+        mList.add("0");
+        mList.add("1");
+        mList.add("2");
+        mList.add("3");
+        mList.add("4");
         verify(mView).putResponseInButtons(mList);
     }
 
