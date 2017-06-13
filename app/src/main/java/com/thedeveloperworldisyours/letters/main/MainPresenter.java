@@ -46,7 +46,7 @@ public class MainPresenter implements MainContract.Presenter {
 
         int init = getRandom(response.length());
 
-        stringBuilder = putLettersInButton(stringBuilder, init, response);
+        stringBuilder = putLettersInButtonFromServer(stringBuilder, init, response);
 
 //        Collections.shuffle(mPutMessy);
         mView.setTraining(stringBuilder.toString());
